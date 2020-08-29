@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aws-lambda-powertools = "*"
+requests = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+pyflakes = "*"
+black = "*"
+requests-mock = "*"
+pylint = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
+
+[scripts]
+test = "env POWERTOOLS_TRACE_DISABLED=\"true\" POWERTOOLS_SERVICE_NAME=\"Example\" POWERTOOLS_METRICS_NAMESPACE=\"Application\" python -m pytest tests/"

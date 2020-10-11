@@ -50,7 +50,7 @@ run: ##=> Run SAM Local API GW and can optionally run new containers connected t
 		|| sam local start-api --docker-network ${NETWORK}
 
 test: ##=> Run pytest
-	@POWERTOOLS_TRACE_DISABLED=1 $(PIPENV) run python -m pytest --cov . --cov-report term-missing --cov-fail-under $(CODE_COVERAGE) tests/ -v
+	@POWERTOOLS_TRACE_DISABLED=1 POWERTOOLS_SERVICE_NAME=\"Example\" POWERTOOLS_METRICS_NAMESPACE=\"Application\" $(PIPENV) run python -m pytest --cov . --cov-report term-missing --cov-fail-under $(CODE_COVERAGE)  tests/ -v
 
 ci: ##=> Run full workflow - Install deps, build deps, and deploy
 	$(MAKE) dev
@@ -61,6 +61,12 @@ hurry: ##=> Run full workflow for the first time
 	$(MAKE) install
 	$(MAKE) build
 	$(MAKE) deploy.guided
+
+lint: ##=> Run linters - bandit, pyflakes, mypy, pytype. IGNORE ERRORS FOR NOW
+	@$(PIPENV)  run pyflakes room_rate_calculator/
+	-@$(PIPENV)  run bandit room_rate_calculator/
+	-@$(PIPENV)  run pytype -d import-error room_rate_calculator/
+	-@$(PIPENV)  run mypy  room_rate_calculator/
 
 #############
 #  Helpers  #

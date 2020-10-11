@@ -13,7 +13,14 @@ pytest-cov = "*"
 pyflakes = "*"
 black = "*"
 requests-mock = "*"
-pylint = "*"
+pytest-html = "*"
+pytype = "*"
+bandit = "*"
+mypy = "*"
+flake8 = "*"
+wheel = "*"
+setuptools = "*"
+twine = "*"
 
 [requires]
 python_version = "3.8"
@@ -22,4 +29,3 @@ python_version = "3.8"
 allow_prereleases = true
 
 [scripts]
-test = "env POWERTOOLS_TRACE_DISABLED=\"true\" POWERTOOLS_SERVICE_NAME=\"Example\" POWERTOOLS_METRICS_NAMESPACE=\"Application\" python -m pytest tests/"

@@ -1,7 +1,7 @@
 # https://date.nager.at/Api
 
 from datetime import date
-from typing import Dict, Any, List, Mapping, NamedTuple
+from typing import List
 
 import requests
 from collections import namedtuple

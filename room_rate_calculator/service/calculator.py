@@ -1,5 +1,5 @@
 from datetime import date, timedelta
-from room_rate_calculator.service.api import get_public_holidays, Holiday
+from room_rate_calculator.service.api import get_public_holidays
 
 
 def room_rate(base_rate: float, stay_date: date) -> float:

@@ -1,4 +1,5 @@
 # Rooom-Rate-Calculator
+![Run Tests and Lint](https://github.com/amitsk/room-rate-calculator/workflows/Run%20Tests%20and%20Lint/badge.svg)
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes [Lambda Powertools for operational best practices](https://github.com/awslabs/aws-lambda-powertools-python), and the following files and folders.
 
